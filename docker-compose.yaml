@@ -17,7 +17,7 @@ services:
     ports:
       - 8000:8000
     environment:
-      SQLALCHEMY_DATABASE_URI: 'mysql+pymysql://root:example@db/flask'
+      SQLALCHEMY_DATABASE_URI: ${SQLALCHEMY_DATABASE_URI}
       db_pass: ${db_pass}
       db_user: ${db_user}
 
