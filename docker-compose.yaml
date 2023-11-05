@@ -18,14 +18,15 @@ services:
       - 8000:8000
     environment:
       SQLALCHEMY_DATABASE_URI: 'mysql+pymysql://root:example@db/flask'
-  
+      db_pass: ${db_pass}
+      db_user: ${db_user}
 
   db:
     image: mariadb
 ##     restart: always
     environment:
-      MARIADB_ROOT_PASSWORD: example
-      MARIADB_DATABASE: flask
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
 
   adminer:
     image: adminer
